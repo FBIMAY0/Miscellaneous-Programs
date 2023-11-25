@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公告信息</title>
+    <script>
+        function openAnnouncementPage() {
+            // 获取勾选框的状态
+            var checkBox = document.getElementById("lessAnnouncementCheckbox");
+            var apiLevel = checkBox.checked ? 0 : 1;
+
+            // 构建新的API URL
+            var apiUrl = "https://webstatic.mihoyo.com/nap/announcement/index.html";
+            apiUrl += "?auth_appid=announcement&authkey_ver=1&bundle_id=nap_cn";
+            apiUrl += "&level=" + apiLevel;
+            apiUrl += "&channel_id=1&game=nap&game_biz=nap_cn&lang=zh-cn&platform=pc&region=prod_cb01_cn&sdk_presentation_style=fullscreen&sdk_screen_transparent=true&sign_type=2#/";
+
+            // 打开新的全屏窗口
+            window.open(apiUrl, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <h1>公告信息</h1>
+    <label for="lessAnnouncementCheckbox">显示更少信息</label>
+    <input type="checkbox" id="lessAnnouncementCheckbox">
+    
+    <button onclick="openAnnouncementPage()">在新标签页中打开公告</button>
+</body>
+</html>
