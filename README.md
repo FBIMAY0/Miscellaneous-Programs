@@ -9,8 +9,12 @@ Arcaea raindrop generator, stopped developing after I found aff.arcaea.icu.
 ## 字节随机生成.py
 随机生成一个字节，探究生成出 00000000 或 11111111 的概率。
 It will generate a byte randomly, and find the possibility to generate 00000000 or 11111111.
-## 关注GMEnglish谢谢喵.py
+## 关注GMEnglish谢谢喵
 一个恶搞程序，随机在1~10分钟内弹窗显示广告。
 A spoof program that randomly pops up ads within 1-10 minutes.
 - 还有，关注GMEnglish谢谢喵！！！！！！
 - And! Subscribe GMEnglish for more!!!!!!
+## napAnnouncement
+一个网页，获取游戏《绝区零》公告，目前还有很多bug尚未修复。
+A web page to get announcements in game "Zenless Zone Zero". It has still many bugs.
+- 作者 Authur：FBIMAYO@已格式化 × moyujun feat. ChatGPT
