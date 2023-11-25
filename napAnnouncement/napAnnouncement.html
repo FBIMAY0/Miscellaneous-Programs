@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公告信息</title>
+    <style>
+        /* 用于全屏显示的样式 */
+        #fullscreenContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 1000;
+            display: none;
+        }
+
+        /* 用于关闭全屏的样式 */
+        #fullscreenIframe {
+            width: 100%;
+            height: calc(100% - 30px); /* 减去按钮的高度 */
+            border: none;
+        }
+
+        .home__close {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background-color: #f1f1f1;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showDebugInfo() {
+            var checkBox = document.getElementById("lessAnnouncementCheckbox");
+            var apiLevel = checkBox.checked ? 0 : null;
+
+            // 构建新的API URL
+            var apiUrl = "https://webstatic.mihoyo.com/nap/announcement/index.html";
+            apiUrl += "?auth_appid=announcement&authkey_ver=1&bundle_id=nap_cn";
+            if (apiLevel !== null) {
+                apiUrl += "&level=" + apiLevel;
+            }
+            apiUrl += "&channel_id=1&game=nap&game_biz=nap_cn&lang=zh-cn&platform=pc&region=prod_cb01_cn&sdk_presentation_style=fullscreen&sdk_screen_transparent=true&sign_type=2#/";
+
+            // 显示Debug信息
+            var debugInfoContainer = document.getElementById("debugInfoContainer");
+            debugInfoContainer.innerText = "API请求地址：" + apiUrl;
+        }
+
+        function toggleFullscreen() {
+            showDebugInfo();
+
+            // 获取勾选框的状态
+            var checkBox = document.getElementById("lessAnnouncementCheckbox");
+            var apiLevel = checkBox.checked ? 0 : null;
+
+            // 构建新的API URL
+            var apiUrl = "https://webstatic.mihoyo.com/nap/announcement/index.html";
+            apiUrl += "?auth_appid=announcement&authkey_ver=1&bundle_id=nap_cn";
+            if (apiLevel !== null) {
+                apiUrl += "&level=" + apiLevel;
+            }
+            apiUrl += "&channel_id=1&game=nap&game_biz=nap_cn&lang=zh-cn&platform=pc&region=prod_cb01_cn&sdk_presentation_style=fullscreen&sdk_screen_transparent=true&sign_type=2#/";
+
+            // 获取全屏容器和iframe元素
+            var fullscreenContainer = document.getElementById("fullscreenContainer");
+            var iframeElement = document.getElementById("fullscreenIframe");
+
+            // 设置iframe的src属性
+            iframeElement.src = apiUrl;
+
+            // 显示全屏容器
+            fullscreenContainer.style.display = "block";
+
+            // 监听iframe内链接变化事件
+            iframeElement.contentWindow.document.addEventListener("click", function(event) {
+                if (iframeElement.contentWindow.location.href === "uniwebview://close") {
+                    closeFullscreen();
+                }
+            });
+        }
+
+        function closeFullscreen() {
+            // 获取全屏容器
+            var fullscreenContainer = document.getElementById("fullscreenContainer");
+
+            // 隐藏全屏容器
+            fullscreenContainer.style.display = "none";
+
+            // 重置iframe的src属性
+            var iframeElement = document.getElementById("fullscreenIframe");
+            iframeElement.src = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>公告信息</h1>
+    <label for="lessAnnouncementCheckbox">显示更少信息</label>
+    <input type="checkbox" id="lessAnnouncementCheckbox">
+    
+    <!-- Debug按钮 -->
+    <button onclick="showDebugInfo()">Debug</button>
+
+    <button onclick="toggleFullscreen()">全屏显示网页</button>
+
+    <!-- Debug信息容器 -->
+    <div id="debugInfoContainer"></div>
+
+    <!-- 全屏容器 -->
+    <div id="fullscreenContainer">
+        <!-- iframe元素，用于显示网页内容 -->
+        <iframe id="fullscreenIframe" class="fullscreenIframe" frameborder="0"></iframe>
+    </div>
+</body>
+</html>
