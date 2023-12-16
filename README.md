@@ -18,3 +18,6 @@ A spoof program that randomly pops up ads within 1-10 minutes.
 一个网页，获取游戏《绝区零》公告，目前还有很多bug尚未修复。
 A web page to get announcements in game "Zenless Zone Zero". It has still many bugs.
 - 作者 Authur：FBIMAYO@已格式化 × moyujun feat. ChatGPT
+## getArcaeaSongRanking.py
+获取Arcaea网页上的歌曲排名。
+Get Arcaea song rankings on its website.
