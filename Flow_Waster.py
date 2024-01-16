@@ -37,7 +37,7 @@ def delete_file(file_path):
 
 
 def main():
-    url = "https://i0.hdslb.com/bfs/new_dyn/feb043c38fe2cf16502fe6cb4bfd7552401742377.png"
+    url = "https://autopatchhk.yuanshen.com/client_app/download/pc_zip/20231208190631_76nrKFC3l3HQt1yg/GenshinImpact_4.3.0.zip.001"
     download_folder = os.path.expanduser("~/Downloads")  # 获取当前用户的下载文件夹路径
     file_name = url.split("/")[-1]  # 从URL中获取文件名
 
