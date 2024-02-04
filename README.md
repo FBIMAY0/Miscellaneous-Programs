@@ -24,3 +24,5 @@ Get Arcaea song rankings on its website.
 ## Flow_Waster.py
 GitHub用户 @moyujunaimoyu 在使用VPN的过程中发现他的VPN流量有许多剩余将被直接清零，因此找到我要求我帮助他浪费流量，比如看Youtube的8K视频。因此，我编写了本程序，方便他快速地浪费VPN流量。
 Easily waste your VPN flow by using this program.
+## getOnlineFileSize.py
+获取在线文件大小。Get the size of files online.
