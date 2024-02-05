@@ -26,3 +26,5 @@ GitHub用户 @moyujunaimoyu 在使用VPN的过程中发现他的VPN流量有许�
 Easily waste your VPN flow by using this program.
 ## getOnlineFileSize.py
 获取在线文件大小。Get the size of files online.
+## PalworldFakeInvitationCodeGenerator.py
+幻兽帕鲁假邀请码生成器。Palworld fake invitation code generator.
